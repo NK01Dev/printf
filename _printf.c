@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 {
 
 	int charprinted = 0;
+	int divisor = 1;
 	va_list args_list;
 
 	if (format == NULL)
@@ -61,7 +62,6 @@ write(1, "-", 1);
 charprinted++;
 num = -num;
 }
-int divisor = 1 ;
 while (num / divisor > 9) {
 divisor *= 10;
 }
