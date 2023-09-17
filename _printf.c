@@ -50,6 +50,29 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				charprinted++;
 			}
+			if(*format == '%'){
+write(1, format, 1);
+charprinted++ ;
+}
+if (*format == 'd' || *format == 'i') {
+int num = va_arg(args_list, int);
+if (num < 0) {
+write(1, "-", 1);
+charprinted++;
+num = -num;
+}
+int divisor = 1 ;
+while (num / divisor > 9) {
+divisor *= 10;
+}
+while (divisor > 0) {
+int digit = (num / divisor) % 10;
+char digit_char = '0' + digit;
+write(1, &digit_char, 1);
+charprinted++;
+divisor /= 10;
+}
+}
 		}
 		format++;
 	}
