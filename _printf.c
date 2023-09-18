@@ -4,6 +4,7 @@
 *@format: format.
 *Return: Printed chars.
 **/
+
 int _printf(const char *format, ...)
 {
 va_list args;
