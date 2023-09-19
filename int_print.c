@@ -8,6 +8,7 @@
 
 int print_d(int num)
 {
+int divisor = 1;
 int i = 0;
 if (num < 0)
 {
@@ -16,7 +17,6 @@ i++;
 num = -num;
 }
 
-int divisor = 1;
 while (num / divisor > 9)
 {
 divisor *= 10;

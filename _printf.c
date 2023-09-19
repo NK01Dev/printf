@@ -38,7 +38,7 @@ count++;
 else if (*format == 'd' || *format == 'i')
 {
 int Nbr = va_arg(args, int);
-int print_d(Nbr);
+print_d(Nbr);
 }
 else if (*format == '%')
 {
