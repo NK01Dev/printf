@@ -1,46 +1,46 @@
 #include "main.h"
 
 /**
- * integer_printf - prints intiger number
+ * printf_integer - prints intiger number
  * @args: number arguements
  * @printed: the printed characters
  * Return: printed charcaters
  */
 
-int integer_printf(va_list args, int prtd)
+int printf_integer(va_list args, int prtd)
 {
-	int nbr = va_arg(args, int);
-	int i = 0;
-	int temp = nbr;
-	int digits;
+	int num = va_arg(args, int);
+	int dgts = 0;
+	int temp = num;
+	int dgt;
 
-	if (nbr < 0)
+	if (num < 0)
 	{
 		prtd += _putchar('-');
-		nbr = -nbr;
+		num = -num;
 
-		temp = nbr;
+		temp = num;
 	}
 
 	do
 	{
-		i++;
+		dgt++;
 		temp /= 10;
 	} while (temp != 0);
 
-	while (i > 0)
+	while (dgts > 0)
 	{
-		int pow10 = 1;
+		int div = 1;
 		int i;
 
-		for (i = 1; i < i; i++)
+		for (i = 1; i < dgts; i++)
 		{
-			pow10 *= 10;
+			div *= 10;
 		}
-		digits = nbr / pow10;
-		prtd += _putchar(digits + '0');
-		nbr -= digits * pow10;
-		i--;
+		dgt = num / div;
+		prtd += _putchar(dgt + '0');
+		num -= dgt * div;
+		dgts--;
 	}
 	return (prtd);
 }
