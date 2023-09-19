@@ -4,17 +4,20 @@
 *@format: format.
 *Return: Printed chars.
 **/
+
 int _printf(const char *format, ...)
 {
 int count = 0;
 va_list args;
 va_start(args, format);
-if(format == NULL)
+if (format == NULL)
 {
 return (-1);
 }
-while (*format != '\0') {
-if (*format == '%') {
+while (*format != '\0')
+{
+if (*format == '%')
+{
 format++;
 if (*format == 'c')
 {
@@ -36,15 +39,15 @@ else if (*format == '%')
 {
 write(1, "%", 1);
 count++;
-} 
-else 
+}
+else
 {
 write(1, "%", 1);
 write(1, format, 1);
 count += 2;
 }
 }
-else 
+else
 {
 write(1, format, 1);
 count++;
@@ -52,6 +55,5 @@ count++;
 format++;
 }
 va_end(args);
-return count;
+return (count);
 }
-
