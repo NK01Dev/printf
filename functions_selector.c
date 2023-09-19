@@ -14,7 +14,7 @@ int functions_selector(const char *format, va_list args, int prtd)
 	{
 	case 'd':
 	case 'i':
-		prtd = integer_printf(args, prtd);
+		prtd = int_printf(args, prtd);
 		break;
 	case 'c':
 		_putchar(va_arg(args, int));

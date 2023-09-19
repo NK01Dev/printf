@@ -9,7 +9,7 @@
 int _putchar(char c);
 int char_printf(va_list args, int prtd);
 int string_printf(va_list args, int prtd);
-int integer_printf(va_list args, int prtd);
+int int_printf(va_list args, int prtd);
 int functions_selector(const char *format, va_list args, int prtd);
 int binary_printf(unsigned int num, int prtd);
 int _printf(const char *format, ...);
