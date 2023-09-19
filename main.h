@@ -18,5 +18,6 @@ int octal_printf(unsigned int num, int prtd);
 int unsigned_printf(unsigned int num, int prtd);
 int reverse_printf(va_list args, int prtd);
 int pointer_printf(va_list args, int prtd);
+int int_printf_helper(int num, int prtd);
 
 #endif
