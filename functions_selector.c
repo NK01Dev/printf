@@ -27,12 +27,28 @@ int functions_selector(const char *format, va_list args, int prtd)
 		_putchar('%');
 		prtd++;
 		break;
+	case 'b':
+		prtd = binary_printf(va_arg(args, unsigned int), prtd);
+		break;
+	case 'x':
+	case 'X':
+		prtd = hex_printf(va_arg(args, unsigned int), prtd, (*format == 'X') ? 1 : 0);
+		break;
+	case 'o':
+		prtd = octal_printf(va_arg(args, unsigned int), prtd);
+		break;
 	case 'u':
 		prtd = unsigned_printf(va_arg(args, unsigned int), prtd);
 		break;
+	case 'r':
+		prtd = reverse_printf(args, prtd);
+		break;
+	case 'p':
+		prtd = pointer_printf(args, prtd);
 		break;
 	default:
 		break;
 	}
 	return (prtd);
 }
+
