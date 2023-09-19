@@ -35,6 +35,11 @@ str++;
 count++;
 }
 }
+else if (*format == 'd' || *format == 'i')
+{
+int Nbr = va_arg(args, int);
+int print_d(Nbr);
+}
 else if (*format == '%')
 {
 write(1, "%", 1);
