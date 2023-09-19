@@ -1,37 +1,16 @@
 #include "main.h"
 
 /**
- * _printf - implementation of the inbuilt printf
- * @format: the format specifier
- * Return: the formated string
+ * char_printf - prints a binary number
+ * @args: the arguements to use
+ * @prtd: the printed characters
+ * Return: prtd charcaters
  */
 
-int _printf(const char *format, ...)
+int char_printf(va_list args, int prtd)
 {
-	int prtd = 0;
+	int c = va_arg(args, int);
 
-	va_list args;
-
-	va_start(args, format);
-if (!format || (*format == '%' && !*(format + 1)))
-return (-1);
-if (*format == '%' && *(format + 1) == ' ' && !*(format + 2))
-return (-1);
-	while (*format != '\0')
-	{
-		if (*format == '%')
-		{
-			format++;
-			prtd = functions_selector(format, args, prtd);
-			format++;
-		}
-		else
-		{
-			_putchar(*format);
-			prtd++;
-			format++;
-		}
-	}
-	va_end(args);
-	return (prtd);
+	_putchar(c);
+	return (prtd + 1);
 }
