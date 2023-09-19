@@ -47,6 +47,9 @@ int functions_selector(const char *format, va_list args, int prtd)
 		prtd = pointer_printf(args, prtd);
 		break;
 	default:
+		_putchar('%');
+		_putchar(*format);
+		prtd ++;
 		break;
 	}
 	return (prtd);
